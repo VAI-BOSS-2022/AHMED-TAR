@@ -9,7 +9,7 @@ module.exports = {
     longDescription: {
       en: "Displays a leaderboard of users with the highest money balance.",
     },
-    category: "information",
+    category: "GAME",
   },
 
   langs: {
