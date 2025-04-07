@@ -49,8 +49,7 @@ const { GoatWrapper } = require("fca-liane-utils");
       // Get network latency (mock value)
       const networkLatency = Math.floor(Math.random() * 100); // Mock value for network latency (in ms)
 
-      const uptimeString = `┣───────═━┈━═───────☺︎︎
-┣‣🗓️ ᴅᴀʏs : ❨${days}❩  			    
+      const uptimeString = `┣‣🗓️ ᴅᴀʏs : ❨${days}❩  			    
 ┣‣⏱️ ʜᴏᴜʀs : ❨${hours}❩ 		  
 ┣‣🕤 ᴍɪɴᴜᴛᴇ : ❨${minutes}❩
 ┣‣⏳ sᴇᴄᴏɴᴅ : ❨${seconds}❩
