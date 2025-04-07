@@ -1,4 +1,4 @@
-cmd install upt.js const { GoatWrapper } = require("fca-liane-utils");
+const { GoatWrapper } = require("fca-liane-utils");
  module.exports = {
   config: {
     name: "upt",
