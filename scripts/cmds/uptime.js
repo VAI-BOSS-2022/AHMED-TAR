@@ -1,3 +1,4 @@
+const { GoatWrapper } = require("fca-liane-utils");
 const os = require("os");
 const fs = require("fs-extra");
 
@@ -10,7 +11,7 @@ module.exports = {
     author: "ArYAN",
     countDown: 0,
     role: 0,
-    category: "system",
+    category: "SYSTEM",
     longDescription: {
       en: "Get System Information",
     },
@@ -111,3 +112,5 @@ module.exports = {
     }
   },
 };
+const wrapper = new GoatWrapper(module.exports);
+wrapper.applyNoPrefix({ allowPrefix: true });
