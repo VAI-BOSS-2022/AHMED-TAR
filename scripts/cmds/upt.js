@@ -2,7 +2,7 @@ const { GoatWrapper } = require("fca-liane-utils");
  module.exports = {
   config: {
     name: "upt",
-    aliases: ["up"],
+    aliases: ["upt"],
     version: "1.3",
     author: "Arafat", // Author is fixed as "Arafat"
     role: 0,
