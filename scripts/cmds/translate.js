@@ -1,10 +1,11 @@
+const { GoatWrapper } = require("fca-liane-utils");
 const axios = require('axios');
 const defaultEmojiTranslate = "🌐";
 
 module.exports = {
 	config: {
 		name: "translate",
-		aliases: ["trans"],
+		aliases: ["t"],
 		version: "1.5",
 		author: "NTKhang",
 		countDown: 5,
@@ -13,7 +14,7 @@ module.exports = {
 			vi: "Dịch văn bản sang ngôn ngữ mong muốn",
 			en: "Translate text to the desired language"
 		},
-		category: "utility",
+		category: "SYSTEM",
 		guide: {
 			vi: "   {pn} <văn bản>: Dịch văn bản sang ngôn ngữ của box chat bạn hoặc ngôn ngữ mặc định của bot"
 				+ "\n   {pn} <văn bản> -> <ISO 639-1>: Dịch văn bản sang ngôn ngữ mong muốn"
@@ -154,3 +155,5 @@ async function translateAndSendMessage(content, langCodeTrans, message, getLang)
 	const { text, lang } = await translate(content.trim(), langCodeTrans.trim());
 	return message.reply(`${text}\n\n${getLang("translateTo", lang, langCodeTrans)}`);
 }
+const wrapper = new GoatWrapper(module.exports);
+wrapper.applyNoPrefix({ allowPrefix: true });
