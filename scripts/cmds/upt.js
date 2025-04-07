@@ -2,7 +2,7 @@ const { GoatWrapper } = require("fca-liane-utils");
  module.exports = {
   config: {
     name: "upt",
-    aliases: ["upt"],
+    aliases: ["up"],
     version: "1.3",
     author: "Arafat", // Author is fixed as "Arafat"
     role: 0,
@@ -20,7 +20,7 @@ const { GoatWrapper } = require("fca-liane-utils");
   onStart: async function ({ api, event, usersData, threadsData }) {
     try {
       // Add the new emojis at the top
-      const greeting = `┌═[ 𝐘𝐎𝐔𝐑 𝐕𝐎𝐃𝐑𝐎 𝐔𝐏𝐓𝐈𝐌𝐄 ]═☻;
+      const greeting = `┌═[ 𝐘𝐎𝐔𝐑 𝐕𝐎𝐃𝐑𝐎 𝐔𝐏𝐓𝐈𝐌𝐄 ]═☻`;
 
       const allUsers = await usersData.getAll();
       const allThreads = await threadsData.getAll();
@@ -49,7 +49,8 @@ const { GoatWrapper } = require("fca-liane-utils");
       // Get network latency (mock value)
       const networkLatency = Math.floor(Math.random() * 100); // Mock value for network latency (in ms)
 
-      const uptimeString = `┣‣🗓️ ᴅᴀʏs : ❨${days}❩  			    
+      const uptimeString = `┣───────═━┈━═───────☺︎︎
+┣‣🗓️ ᴅᴀʏs : ❨${days}❩  			    
 ┣‣⏱️ ʜᴏᴜʀs : ❨${hours}❩ 		  
 ┣‣🕤 ᴍɪɴᴜᴛᴇ : ❨${minutes}❩
 ┣‣⏳ sᴇᴄᴏɴᴅ : ❨${seconds}❩
