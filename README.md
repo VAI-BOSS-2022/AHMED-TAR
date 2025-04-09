@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/BtdKJaL.jpeg" alt="banner">
+<img src="https://i.imgur.com/lj9jHBt.jpeg" alt="banner">
 <h1 align="center"><img src="https://i.imgur.com/lj9jHBt.jpeg" width="22px"> ARAFAT BOT</h1
 
 
