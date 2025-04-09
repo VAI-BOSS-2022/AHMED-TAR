@@ -30,7 +30,7 @@ account.dev.txt { right }
 
 Enjoy the running render 🙂❤️🦆
 
-**YOUTUBE**
+**TikTok**
 
 Owner TikTok Id
 [ewr_arafat_404](tiktok.com/@ewr_arafat_404).
