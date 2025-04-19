@@ -48,7 +48,7 @@ module.exports = {
             `${await baseApiUrl()}/baby?text=${encodeURIComponent(reply)}&senderID=${event.senderID}&font=1`
           );
           const message = {
-            body: `${response.data.reply}`,
+            body: ` ${response.data.reply}`,
             mentions: [{
               tag: userName,
               id: event.senderID
@@ -129,7 +129,7 @@ module.exports = {
 
         if (count === 1) {
           const msg = {
-            body: `🌡️ ${userName} 🌡️\n\n${rand}`,
+            body: `‎┍━━━━═━┈◈✙◈┈━═━━━━━♲︎︎︎\n╰━‣𝐃𝐞𝐚𝐫 ❪ ${userName}❫\n╰━‣🗣️: ${rand}`,
             mentions: [mentionTag]
           };
           setTimeout(() => {
