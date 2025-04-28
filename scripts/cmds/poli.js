@@ -1,64 +1,40 @@
-const axios = require("axios");
-const fs = require("fs");
-const path = require("path");
+const axios = require('axios');
 
 module.exports = {
   config: {
-    name: "poli",
-    author: "MahMUD",
-    version: "1.7",
-    cooldowns: 10,
+    name: 'poli',
+    version: '1.0',
+    author: 'OtinXSandip',
+    countDown: 0,
     role: 0,
-    category: "IMAGE",
+    description: {
+      en: 'Text to Image'
+    },
+    category: 'IMAGE',
     guide: {
-      en: "{p}poli <prompt>"
+      en: `{pn} prompt`
     }
   },
 
-  onStart: async function ({ message, args, api, event }) {
-    if (args.length === 0) {
-      return api.sendMessage("❌ | Please provide a prompt.", event.threadID, event.messageID);
+  onStart: async function ({ message, api, args, event }) {
+    const prompt = args.join(' ');
+    
+    if (!prompt) {
+      return message.reply("Soraty e");
     }
-
-    const prompt = args.join(" ");
-    const cacheDir = path.join(__dirname, "cache");
-    if (!fs.existsSync(cacheDir)) fs.mkdirSync(cacheDir);
-
-    api.sendMessage("𝐖𝐚𝐢𝐭 𝐤𝐨𝐫𝐨 𝐣𝐚𝐧 <😘", event.threadID, event.messageID);
-
-    try {
-      const styles = ["ultra detailed", "4k resolution", "realistic lighting", "artstation", "digital painting"];
-      const imagePaths = [];
-
-      for (let i = 0; i < 4; i++) {
-        const enhancedPrompt = `${prompt}, ${styles[i % styles.length]}`;
-        const response = await axios.post("https://mahmud-poli.onrender.com/generate", {
-          prompt: enhancedPrompt
-        }, {
-          responseType: "arraybuffer",
-          headers: {
-            "author": module.exports.config.author
-          }
-        });
-
-        if (response.data.error) {
-          return message.reply(`❌ | ${response.data.error}`);
-        }
-
-        const filePath = path.join(cacheDir, `generated_${Date.now()}_${i}.png`);
-        fs.writeFileSync(filePath, response.data);
-        imagePaths.push(filePath);
-      }
-
-      const attachments = imagePaths.map(p => fs.createReadStream(p));
-      message.reply({
-        body: "✅ | Here are images generated from your prompt:",
-        attachment: attachments
+    
+   
+    const baseURL = `https://rubish-apihub.onrender.com/rubish//imagine?prompt=${prompt}&apikey=rubish69`;
+    
+    
+    message.reply("✅| Generating please wait.", async (err, info) => {
+      message.reply({ 
+body: `✅`,
+        attachment: await global.utils.getStreamFromURL(baseURL)
       });
-
-    } catch (error) {
-      console.error("Image generation error:", error);
-      message.reply("❌ | Couldn't generate images. Try again later.");
-    }
+      let ui = info.messageID;
+      message.unsend(ui);
+      
+    });
   }
 };
