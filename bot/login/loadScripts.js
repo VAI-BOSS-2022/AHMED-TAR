@@ -90,7 +90,7 @@ module.exports = async function (api, threadModel, userModel, dashBoardModel, gl
 							if (!existsSync(`${process.cwd()}/node_modules/${packageName}`)) {
 								const wating = setInterval(() => {
 									// loading.info('PACKAGE', `${spinner[count % spinner.length]} Installing package ${packageName} for ${text} ${file}`);
-									loading.info('PACKAGE', `${spinner[count % spinner.length]}ULLASH Installing package ${colors.yellow(packageName)} for ${text} ${colors.yellow(file)}`);
+									loading.info('PACKAGE', `${spinner[count % spinner.length]}TARIF Installing package ${colors.yellow(packageName)} for ${text} ${colors.yellow(file)}`);
 									count++;
 								}, 80);
 								try {
